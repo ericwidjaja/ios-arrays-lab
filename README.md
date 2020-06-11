@@ -5,12 +5,10 @@ Fork and clone this repo. On your fork, answer and commit the follow questions. 
 ## Question 1
 
 Create an array of strings called `colors` that contain "orange", "red", "yellow", "turquoise", and "lavender".
-
 Then, using array subscripting and string interpolation, print out the String `"orange, yellow, and lavender are some of my favorite colors"`.
 ```
 var colors = ["orange", "red", "yellow", "turquoise", "lavender"]
-
-print("\(colors[0]), \(colors[2]), and \(colors[4]) are some of my favorite colors")
+print(" \(colors[0]), \(colors[2]), and \(colors[4]) are some of my favorite colors")
 
 ```
 ## Question 2
@@ -20,14 +18,14 @@ Remove "Illinois" and "Kansas" from the array below.
 `var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]`
 ```
 var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
-
 var newWesternStates = [String]()
-var illinois = "Illinois"
-var kansas = "Kansas"
-for i in westernStates {
-if i != illinois && i != kansas {
-newWesternStates.append(i)
-}
+let illinois = "Illinois"
+let kansas = "Kansas"
+
+for state in westernStates {
+    if state != illinois && state != kansas {
+        newWesternStates.append(state)
+    }
 }
 print(newWesternStates)
 
