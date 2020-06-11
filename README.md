@@ -36,16 +36,14 @@ Iterate through the array below. For each state, print out the name of the state
 
 `let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]`
 ```
-let moreStates = ["Hawaii","New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
-var States = [String]()
+let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
 var hawaii = "Hawaii"
-
-for i in moreStates {
-if i == hawaii {
-print("\(i): is NOT in continental United States")
-} else {
-print("\(i): is in the continental United States")
-}
+for state in moreStates {
+    if state == hawaii {
+        print("\(state) : is NOT in the continental United States \n")
+    } else {
+        print("\(state) : is in the continental United States \n")
+    }
 }
 ```
 ## Question 4
@@ -55,10 +53,9 @@ Print out how many non-whitespace characters are in `myString`:
 `let myString = "This is good practice with Strings!"`
 ```
 let myString = "This is good practice with Strings!"
-let trimmedString = myString.components(separatedBy: .whitespacesAndNewlines).joined()
-
-print(trimmedString)
-print(trimmedString.count)
+let trimmedStr = myString.components(separatedBy: .whitespacesAndNewlines).joined()
+print(trimmedStr)
+print("There are \(trimmedStr.count) non-whitespace characters in `myString`")
 ```
 Iterate through the array below. For each sentence, print out how many non-whitespace characters are in it.
 
@@ -67,18 +64,16 @@ Iterate through the array below. For each sentence, print out how many non-white
 let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
 
 var character = 0
-for quote in myFavoriteQuotes {
-for space in quote {
-if String(space) != " " {
-character += 1
-}
-}
-print("\"\(quote)\" has \(character) non-whitespace characters.")
-character = 0
+for sentence in myFavoriteQuotes {
+    for space in sentence {
+        if String(space) != " " {
+            character += 1
+        }
+    }
+    print("\"\(sentence)\" has \(character) non-whitespace characters.")
+    character = 0
 }
 ```
-
-
 ## Question 5
 
 Iterate through `garden` and place any 🌷 that you find into the `basket`. Replace any 🌷 that you pick up with `"dirt"`. Then print how many 🌷 are in your `basket`.
