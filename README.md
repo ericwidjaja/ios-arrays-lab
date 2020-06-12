@@ -87,14 +87,13 @@ var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","di
 
 var basket = [String]()
 
-for (i, g) in garden.enumerated() {
-if g == "🌷" {
-basket.append(g)
-garden[i] = "dirt"
+for flower in garden.indices {
+    if garden[flower] == "🌷" {
+        basket.append("🌷")
+        garden[flower] = "dirt"
+    }
 }
-}
-print("\(basket) = \(basket.count) ")
-print(garden)
+print("We have \(basket.count) 🌷 in the basket\n")
 ```
 ## Question 6
 
@@ -114,24 +113,28 @@ print(battingLineup)
 battingLineup.append("Suzuki")
 print(battingLineup)
 
-//change "Jeter" to "Tejada"
-if let i = battingLineup.firstIndex(of: "Jeter") {
-battingLineup[i] = "Tejada"
+//change "Jeter" to "Tejada" and change "Thomas" for "Guerrero"
+
+var index = 0
+var firstIndex = index
+
+battingLineup.append("Suzuki")
+
+for player in battingLineup {
+    if player == "Reyes" {
+        firstIndex = index
+    } else if player == "Jeter" {
+        battingLineup[index] = "Tejada"
+    } else if player == "Thomas" {
+        battingLineup[index] = "Guerrero"
+    }
+    index += 1
 }
+////Put "Reyes" to bat 8th instead
+battingLineup.swapAt(firstIndex, 7)
+battingLineup.removeLast()
 print(battingLineup)
 
-//change "Thomas" for "Guerrero"
-if let i = battingLineup.firstIndex(of: "Thomas") {
-battingLineup[i] = "Guerrero"
-}
-print(battingLineup)
-
-//Put "Reyes" to bat 8th instead
-if let i = battingLineup.firstIndex(of: "Rodriguez") {
-battingLineup[i] = "Reyes"
-}
-battingLineup[0] = "Rodriguez"
-print("Final Batting Line Up = \(battingLineup)")
 ```
 
 ## Question 7
@@ -189,11 +192,10 @@ let arrayOfNumbers: [Int] = (1...100).map{ _ in Int.random(in: 0...200)}.map{Int
 
 var maxVal = arrayOfNumbers[0]
 for number in arrayOfNumbers {
-if maxVal < number {
-maxVal = number
+    if maxVal < number {
+        maxVal = number
+    }
 }
-}
-
 print(maxVal)
 ```
 
