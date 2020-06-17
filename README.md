@@ -311,11 +311,12 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 Find the sum of all the multiples of 3 or 5 below 1000.
 ```
 var sum = 0
-for i in 1..<1000 where i % 3 == 0 || i % 5 == 0 {
-sum += i
+for i in 1..<1000 {
+    if i % 3 == 0 || i % 5 == 0 {
+        sum += i
+    }
 }
-
-print(sum)
+print("The sum of all the multiples of 3 or 5 below 1,000 = \(sum)")
 ```
 ## Question 17
 
@@ -324,7 +325,9 @@ Make an array that contains all elements that appear **more than twice** in `som
 ```swift
 var someRepeatsAgain = [25,11,30,31,50,28,4,37,13,20,24,38,28,14,44,33,7,43,39,35,36,42,1,40,7,14,23,46,21,39,11,42,12,38,41,48,20,23,29,24,50,41,38,23,11,30,50,13,13,16,10,8,3,43,10,20,28,39,24,36,21,13,40,25,37,39,31,4,46,20,38,2,7,11,11,41,45,9,49,31,38,23,41,16,49,29,14,6,6,11,5,39,13,17,43,1,1,15,25]
 
-let moreThanTwice = Dictionary(grouping: someRepeatsAgain, by: {$0}).filter { $1.count > 1 }.keys.sorted()
+print(someRepeatsAgain.sorted())
+
+let moreThanTwice = Dictionary(grouping: someRepeatsAgain, by: {$0}).filter { $1.count > 2 }.keys.sorted()
 print(moreThanTwice)
 ```
 
