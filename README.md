@@ -19,8 +19,6 @@ Remove "Illinois" and "Kansas" from the array below.
 ```
 var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]
 var newWesternStates = [String]()
-let illinois = "Illinois"
-let kansas = "Kansas"
 
 for state in westernStates {
     if state != illinois && state != kansas {
@@ -37,12 +35,12 @@ Iterate through the array below. For each state, print out the name of the state
 `let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]`
 ```
 let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]
-var hawaii = "Hawaii"
+
 for state in moreStates {
-    if state == hawaii {
-        print("\(state) : is NOT in the continental United States \n")
+    if state == "Hawaii" {
+        print("\(state) : is not in the continental United States\n")
     } else {
-        print("\(state) : is in the continental United States \n")
+        print("\(state) : is in the continental United States\n")
     }
 }
 ```
@@ -52,10 +50,22 @@ Print out how many non-whitespace characters are in `myString`:
 
 `let myString = "This is good practice with Strings!"`
 ```
+first solution:
+
 let myString = "This is good practice with Strings!"
 let trimmedStr = myString.components(separatedBy: .whitespacesAndNewlines).joined()
 print(trimmedStr)
 print("There are \(trimmedStr.count) non-whitespace characters in `myString`")
+
+second solution:
+var myTrimmedStr = ""
+for char in myString {
+    if char != " "{
+        myTrimmedStr.append(char)
+    }
+}
+print("There are \(myTrimmedStr.count) non-whitespace characters in `myString`")
+
 ```
 Iterate through the array below. For each sentence, print out how many non-whitespace characters are in it.
 
@@ -63,15 +73,15 @@ Iterate through the array below. For each sentence, print out how many non-white
 ```
 let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]
 
-var character = 0
-for sentence in myFavoriteQuotes {
-    for space in sentence {
-        if String(space) != " " {
-            character += 1
+var characterCount = 0
+for sentenceStr in myFavoriteQuotes {
+    for char in sentenceStr {
+        if char != " " {
+            characterCount += 1
         }
     }
-    print("\"\(sentence)\" has \(character) non-whitespace characters.")
-    character = 0
+    print(" '\(sentenceStr)' has \(characterCount) non-whitespace characters.")
+    characterCount = 0
 }
 ```
 ## Question 5
